@@ -1,0 +1,87 @@
+/*font-size*/
+The font-size property specifies the size, or height, of the font. font-size affects 
+not only the font to which it is applied, but is also used to compute the value of em,
+rem, and ex length units
+   -Absolute keywords and values:-
+It accepts the following absolute keyword values:
+xx-small
+x-small
+small
+medium
+large
+x-large
+xx-large
+These absolute values are mapped to specific font sizes as computed by the browser.
+ But you may also use two keyword values which are relative to the font size of 
+ the parent element.
+
+Other absolute values include mm (millimeters), cm (centimeters), in (inches),
+ pt (points) and pc (picas). One point is equal to 1/72 of an inch whilst one 
+ pica is equal to 12 points — these values are typically used for printed documents
+
+-Relative keywords:-
+larger
+smaller
+For example, if the parent element has a font size of small, a child element with 
+a defined relative size of larger will make the font size equal to medium for the child element.
+
+-Percentage values:-
+Percentage values, such as setting a font-size of 110%, are also relative to the parent
+ element’s font size as shown in the demo below:
+
+-The em unit:-
+The em unit is a relative unit based on the computed value of the font size of the parent
+ element. This means that child elements are always dependent on their parent to set their font-size.
+.container {
+  font-size: 16px;
+}
+
+p {
+  font-size: 1em;
+}
+
+h2 {
+  font-size: 2em;
+}
+In the example above, the paragraph will have a font-size of 16px because 1 x 16 = 16px 
+whereas the heading will be 32px because 2 x 16 = 32px. There are many advantages to
+ scaling type up depending on the font-size of the parent element, namely we can wrap
+ elements within a container and know that all of the children will always be relative 
+ to one another
+
+-The rem unit:-
+In the case of rem units, however, the font-size is dependent on the value of the 
+root element (or the html element).
+html {
+  font-size: 16px;
+}
+
+p {
+  font-size: 1.5rem;
+}
+In the above example, the rem unit is equal to 16px (because it is inherited from 
+the html/root element) and thus the font size for all paragraph elements will compute
+ to 24px (1.5 x 16 = 24). Unlike em units, the paragraph will ignore the styling of 
+ all its parents besides the root.
+
+-The ex unit:-
+.element {
+  font-size: 20ex;
+}
+For ex units, 1ex would be equal to the computed height of the lowercase letter x 
+of the root element. So in the example below the html element is set to 20px and all 
+the other font-sizes are determined by the x-height of that particular font
+
+-Viewport units:-
+.element-one {
+  font-size: 100vh;
+}
+
+.element-two {
+  font-size: 100vw;
+}
+Viewport units, such as vw and vh, set the font-size of an element relative to 
+the dimensions of the viewport:
+
+1vw = 1% of viewport width
+1vh = 1% of viewport height

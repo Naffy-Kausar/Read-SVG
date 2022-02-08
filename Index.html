@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML, CSS, JS With SVG Animation</title>
+	<link rel="stylesheet" type="text/css" href="Style.css">
+</head>
+<body>
+	<div id="main">
+		<div class="navbar">
+			<div class="logo">
+				<img src="Images/logo.png" alt="Logo">
+			</div>
+			<nav>
+				<ul>
+					<li>Studio</li>
+					<li>Partner</li>
+					<li>Media</li>
+					<li>User</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="circle-box">
+			<svg height="402" width="402">
+				<circle r="200" cx ="200" cy="200" stroke-width="5px" stroke="green" fill="none"/>
+			</svg>
+			<svg height="402" width="402">
+				<circle r="200" cx ="200" cy="200" stroke-width="2px" stroke="red" fill="none" id ="svgCircle"/>
+			</svg>
+			<div>
+				<span id ="Step1"></span>
+				<span id ="Step2"></span>
+				<span id ="Step3"></span>
+				<span id ="Step4"></span>
+				<span id ="Step5"></span>
+			</div>
+			
+             <div class="user-box" id="UserBox">
+				              
+				<div class="user">
+					<img src="Images/person-1.jpg" alt="">
+					<h1>1.Images/person-1.jpg Mota Bhai also known as Godhna</h1>
+					<p>Please give essential foods and things to godhna at proper time because godhna is used in Bakrid for Kurbani</p>
+					<div class="social-links">
+						<img src="Images/facebook.png" alt="">
+						<img src="Images/instagram.png" alt="">
+						<img src="Images/twitter.png" alt="">
+						<img src="Images/linkedin.png" alt="">
+					</div>
+				</div>
+				                
+
+
+				                <!-- Person-2 -->
+				<div class="user">
+					<img src="Images/kid2.jpg">
+					<h1>2.Images/kid2.jpg Mota Bhai also known as Godhna</h1>
+					<p>Please give essential foods and things to godhna at proper time because godhna is used in Bakrid for Kurbani</p>
+					<div class="social-links">
+						<img src="Images/facebook.png" alt="">
+						<img src="Images/instagram.png" alt="">
+						<img src="Images/twitter.png" alt="">
+						<img src="Images/linkedin.png" alt="">
+					</div>
+				</div>
+				                 <!-- Person-3 -->
+				<div class="user">
+					<img src="Images/person-3.jpg">
+					<h1>3.Images/person-3.jpg Mota Bhai also known as Godhna</h1>
+					<p>Please give essential foods and things to godhna at proper time because godhna is used in Bakrid for Kurbani</p>
+					<div class="social-links">
+						<img src="Images/facebook.png" alt="">
+						<img src="Images/instagram.png" alt="">
+						<img src="Images/twitter.png" alt="">
+						<img src="Images/linkedin.png" alt="">
+					</div>
+				</div>
+				                 <!-- Person-4 -->
+				<div class="user">
+					<img src="Images/kid1.jpg">
+					<h1>4.Images/kid1.jpg Mota Bhai also known as Godhna</h1>
+					<p>Please give essential foods and things to godhna at proper time because godhna is used in Bakrid for Kurbani</p>
+					<div class="social-links">
+						<img src="Images/facebook.png" alt="">
+						<img src="Images/instagram.png" alt="">
+						<img src="Images/twitter.png" alt="">
+						<img src="Images/linkedin.png" alt="">
+					</div>
+				</div>
+
+				                   <!-- Person-5 -->
+				<div class="user">
+					<img src="Images/kid1.jpg">
+					<h1>5.Images/car2.jpeg Mota Bhai also known as Godhna</h1>
+					<p>Please give essential foods and things to godhna at proper time because godhna is used in Bakrid for Kurbani</p>
+					<div class="social-links">
+						<img src="Images/facebook.png" alt="">
+						<img src="Images/instagram.png" alt="">
+						<img src="Images/twitter.png" alt="">
+						<img src="Images/linkedin.png" alt="">
+					</div>
+				</div> <!-- User -->
+			</div>  <!--  user-box -->
+			             
+
+		</div>   <!--  Circle Box -->
+	</div>  <!-- Main -->
+
+
+	<script>
+		var svgCircle = document.getElementById("svgCircle");
+		var Step1 = document.getElementById("Step1");
+		var Step2 = document.getElementById("Step2");
+		var Step3 = document.getElementById("Step3");
+		var Step4 = document.getElementById("Step4");
+		var Step5 = document.getElementById("Step5");
+
+		var main = document.getElementById("main");
+		var UserBox = document.getElementById("UserBox");
+
+		main.style.backgroundImage = "url(Images/img-1.jpg)";
+
+		Step1.addEventListener('click',()=>{
+			svgCircle.style.strokeDashoffset = "1004";
+			main.style.backgroundImage = "url(Images/img-2.jpg)";
+			UserBox.style.top = "-350px";
+
+		});
+		Step2.addEventListener('click',()=>{
+			svgCircle.style.strokeDashoffset = "753";
+			main.style.backgroundImage = "url(Images/img-3.jpg)";
+			UserBox.style.top = "-800px";
+
+		});
+		Step3.addEventListener('click',()=>{
+			svgCircle.style.strokeDashoffset = "502";
+			main.style.backgroundImage = "url(Images/img-4.jpg)";
+			UserBox.style.top = "-1250px";
+
+		});
+		Step4.addEventListener('click',()=>{
+			svgCircle.style.strokeDashoffset = "251";
+			main.style.backgroundImage = "url(Images/img-5.jpg)";
+			UserBox.style.top = "1700px";
+
+		});
+		Step5.addEventListener('click',()=>{
+			svgCircle.style.strokeDashoffset = "0";
+			main.style.backgroundImage = "url(Images/img-1.jpg)";
+			UserBox.style.top = "100px";
+
+		});
+	</script>
+
+
+</body>
+</html>

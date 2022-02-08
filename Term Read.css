@@ -1,0 +1,312 @@
+
+
+/*Term Taken From Thapa Technicals 12-May-2020*/
+
+
+/*Position*/
+ -Nudge meaning= khiskaane/dhakka dena
+ -whilst meaning=jabki
+ static: every element has a static position by default, so the element will stick to the normal page flow. 
+         So if there is a left/right/top/bottom/z-index set then there will be no effect on that element.
+
+relative: an element’s original position remains in the flow of the document, just like the static value. 
+          But now left/right/top/bottom/z-index will work.
+          The positional properties “nudge” the element from the original position in that direction.
+
+absolute: the element is removed from the flow of the document and other elements will behave as if 
+          it’s not even there whilst all the other positional properties will work on it.
+
+fixed: the element is removed from the flow of the document like absolutely positioned elements.
+       In fact they behave almost the same, only fixed positioned elements are always relative 
+       to the document,not any particular parent, and are unaffected by scrolling.
+
+sticky (experimental): the element is treated like a relative value until the scroll 
+                       location of the viewport reaches a specified threshold,
+                       at which point the element takes a fixed position where it is told to stick.
+
+inherit: the position value doesn’t cascade, so this can be used to specifically 
+         force it to, and inherit the positioning value from its parent.
+
+
+/*background-size: cover; 10-Wednesday-June-2020*/
+ cover-tells the browser to make sure the image always covers the entire container, 
+ even if it has to stretch the image or cut a little bit off one of the edges. 
+ contain-on the other hand, says to always show the whole image, even if that leaves 
+ a little space to the sides or bottom.
+ The default keyword — auto — tells the browser to automatically calculate the size 
+ based on the actual size of the image and the aspect ratio.
+
+
+ /*transform: translate;*/
+The transform property applies a 2D or 3D transformation to an element. 
+This property allows you to rotate, scale, move, skew, etc., elements.
+
+scale():- Affects the size of the element. This also applies to the font-size,
+ padding, height, and width of an element, too. It’s also a a shorthand function 
+ for the scaleX and scaleY functions.
+skewX() and skewY():- Tilts an element to the left or right, like turning a rectangle 
+into a parallelogram. 
+skew():- is a shorthand that combines skewX() and skewY by accepting both values.
+translate():- Moves an element sideways or up and down.
+rotate():- Rotates the element clockwise from its current position.
+matrix():- A function that is probably not intended to be written by hand, but 
+           combines all transforms into one.
+perspective():- Doesn’t affect the element itself, but affects the transforms of
+                descendent elements’ 3D transforms, 
+                allowing them all to have a consistent depth perspective.
+
+
+/*overflow:*/
+The overflow property controls what happens to content that breaks outside of its bounds:
+ imagine a div in which you’ve explicitly set to be 200px wide, but contains an image that 
+ is 300px wide. That image will stick out of the div and be visible by default.
+ Whereas if you set the overflow value to hidden, the image will cut off at 200px.
+
+ visible: content is not clipped when it proceeds outside its box. 
+         This is the default value of the property
+hidden:- overflowing content will be hidden.
+scroll:- similar to hidden except users will be able to scroll through the hidden content
+auto:- if the content proceeds outside its box then that content will be hidden whilst a 
+         scroll bar should be visible for users to read the rest of the content.
+initial:- uses the default value which is visible
+inherit:- sets the overflow to the value of its parent element.
+
+
+/*stroke-dasharray*/
+The stroke-dasharray property in CSS is for creating dashes in the stroke of SVG shapes.
+The higher the number, the more space in between dashes in the stroke
+
+This will override a presentation attribute <path stroke-dasharray="5" ... />
+This will not override an inline style e.g. <path style="stroke-dasharray: 5;" ... />
+
+
+/*z-index*/
+The z-index property in CSS controls the vertical stacking order of elements that overlap.
+ As in, which one appears as if it is physically closer to you. 
+z-index only affects elements that have a position value other than static (the default).
+
+Elements can overlap for a variety of reasons, for instance, relative positioning has nudged 
+it over something else. Negative margin has pulled the element over another.
+ Absolutely positioned elements overlap each other. All sorts of reasons.
+
+ -z-index:- -1;
+You can use negative values. The target element is move in behind its siblings.
+-z-index:- auto;
+The order is defined by the order in the HTML code:
+first in the code = behind
+last in the code = in front
+-z-index:- 1;
+The z-index value is relative to the other ones. The target element is move in front of its siblings.
+
+
+/*linear-gradient*/
+linear-gradient(). It’s called “linear” because the colors flow from left-to-right, 
+top-to-bottom, or at any angle you chose in a single direction.
+gradients are basically a way to generate an image natively in code without 
+the use of image editing software.As such, gradients are applied to background 
+properties, which we’ll get into right now.
+
+
+/*clip-path*/
+The clip-path property in CSS allows you to specify a specific region of an element to display, 
+rather than showing the complete area. There used to be a clip property
+
+
+/*before/after*/
+-Before Selector
+The CSS ::before selector can be used to insert content before the content of 
+the selected element or elements. It is used by attaching ::before to the 
+element it is to be used on.
+
+-After Selector
+The CSS ::after selector can be used to insert content after the content 
+of the selected element or elements. It's used by attaching ::after to the 
+element it is to be used on.
+
+     -Single-colon vs. Double-colon
+There’s a bit of discussion about the right way of using pseudo-elements
+ – the old style single-colon (:before), used in CSS specifications 1 and 2,
+  versus the CSS3 recommendation, double-colon (::before), mainly to
+  “establish a discrimination between pseudo-classes and pseudo-elements”.
+
+But for compatibility reasons, the single-colon method is still accepted. 
+Keep in mind that IE8 supports the single-colon notation only.
+
+
+/*Content*/
+The content property is used with the ::before and ::after pseudo-elements, 
+to insert generated content.
+
+
+/*webkit-transform*/
+-Render=Prastut Karna,Submit,Lautana
+-rendering=Anjaam Dena
+-Intended=Iraada
+Webkit refers to the browser rendering engine used for Apple’s Safari and Google’s 
+Chrome browsers. It is also the CSS syntax used for CSS3 modules.
+
+Those are CSS Vendor prefixes, if you google just that, you'll find all the information you need.
+Android: -webkit,Chrome: -webkit,iOS: -webkit,Safari: -webkit,Firefox: -moz,Internet Explorer: -ms-
+As bonus: Opera: -o-
+
+
+/*outline*/
+The outline property in CSS draws a line around the outside of an element. 
+It’s similar to border except that:
+
+It always goes around all the sides, you can’t specify particular sides
+It’s not a part of the box model, so it won’t affect the position of the
+ element or adjacent elements (nice for debugging!)
+Other minor facts include that it doesn’t respect border-radius 
+(makes sense I suppose as it’s not a border) and that it isn’t always rectangular.
+ If the outline goes around an inline element with different font-sizes,
+ for instance, Opera will draw a staggered box around it all.
+
+It is often used for accessibility reasons, to emphasize a link when tabbed 
+to without affecting positioning and in a different way than hover.
+
+-The outline property in CSS draws a line around the outside of an element. 
+It’s similar to border except that:
+
+It always goes around all the sides, you can’t specify particular sides
+It’s not a part of the box model, so it won’t affect the position of 
+the element or adjacent elements (nice for debugging!)
+Other minor facts include that it doesn’t respect border-radius 
+(makes sense I suppose as it’s not a border) and that it isn’t 
+always rectangular. If the outline goes around an inline element 
+with different font-sizes, for instance, Opera will draw a staggered box around it all.
+
+It is often used for accessibility reasons, to emphasize a link 
+when tabbed to without affecting positioning and in a different way than hover.
+
+
+/*margin*/
+The margin property defines the outermost portion of the box model, creating space
+ around an element, outside of any defined borders.
+Margins are set using lengths, percentages, or the keyword auto and can have negative value
+
+margin is a shorthand property and accepts up to four values, shown here:
+ margin: <margin-top> || <margin-right> || <margin-bottom> || <margin-left>
+
+
+ /*padding*/
+ The padding property in CSS defines the innermost portion of the box model,
+ creating space around an element’s content, inside of any defined margins and/or borders.
+
+Padding values are set using lengths or percentages, and cannot accept negative values. 
+The initial, or default, value for all padding properties is 0.
+ padding shorthand property, which accepts up to four values, shown here:
+ padding: <padding-top> || <padding-right> || <padding-bottom> || <padding
+
+
+ /*text-decoration*/
+ The text-decoration property adds an underline, overline, line-through,
+  or a combination of lines to selected text.
+
+      Values:-
+none: no line is drawn, and any existing decoration is removed.
+underline: draws a 1px line across the text at its baseline.
+line-through: draws a 1px line across the text at its “middle” point.
+overline: draws a 1px line across the text, directly above its “top” point.
+inherit: inherits the decoration of the parent.
+The blink value is in the W3C spec, but it is deprecated and will not work 
+in any current browser. When it worked, it made the text appear to “blink”
+ by rapidly toggling it between 0% and 100% opacity.
+ You can combine the underline, overline, or line-through values in a 
+ space-separated list to add multiple decoration lines:
+ example=text-decoration: overline underline line-through;
+
+
+ /*box-shadow*/
+ box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];
+1.The horizontal offset (required) of the shadow, positive means the shadow will be on the right 
+of the box, a negative offset will put the shadow on the left of the box.
+2.The vertical offset (required) of the shadow, a negative one means the box-shadow will be 
+above the box, a positive one means the shadow will be below the box.
+3.The blur radius (required), if set to 0 the shadow will be sharp, the higher the number, 
+the more blurred it will be, and the further out the shadow will extend. 
+For instance a shadow with 5px of horizontal offset that also has a 5px blur radius will
+ be 10px of total shadow.
+4.The spread radius (optional), positive values increase the size of the shadow, 
+negative values decrease the size. Default is 0 (the shadow is same size as blur).
+5.Color (required) – takes any color value, like hex, named, rgba or hsla. 
+If the color value is omitted, box shadows are drawn in the foreground color (text color).
+ But be aware, older WebKit browsers (pre Chrome 20 and Safari 6) 
+ ignore the rule when color is omitted.
+          or
+1.the first is the horizontal offset
+the second is the vertical offset
+The shadow color will be inherited from the text color.
+2.You can define a color as the last value.
+As with color, you can use color names, hexadecimal, rgb, hsl...
+3.The optional third value defines the blur of the shadow.
+The color will be diffused across 10px in this example, from opaque to transparent
+4.The optional fourth value defines the spread of the shadow.
+The spread defines how much the shadow should grow: it enhances the shadow.
+
+
+/*Text-Transform*/
+      Text-Transform Values:-
+1.lowercase makes all of the letters in the selected text lowercase.
+2.uppercase makes all of the letters in the selected text uppercase.
+3.capitalize capitalizes the first letter of each word in the selected text.
+4.none leaves the text’s case and capitalization exactly as it was entered.
+5.inherit gives the text the case and capitalization of its parent.
+
+
+/*font-family*/
+The font-family property defines the font that is applied to the selected element. 
+The font that is selected is not a single font face, but a “family”, and thus may 
+be dependent on other typographic property values to select the correct face within the family
+
+
+/*justify-content*/
+It defines the alignment along the main axis. It helps distribute extra free space
+leftover wheneither all the flex items on a line are inflexible, or are flexible
+but have reached their maximum size. It also exerts some control over the 
+alignment of items when they overflow the line.
+
+The justify-content property accepts five different values:-
+
+flex-start (default): items are packed toward the start line
+flex-end: items are packed toward to end line
+          center: items are centered along the line
+space-between: items are evenly distributed in the line; first item is on
+               the start line, last item on the end line
+space-around: items are evenly distributed in the line with equal space around them
+space-evenly: items are distributed so that the spacing between any two adjacent 
+alignment subjects, before the first alignment subject, and after the last 
+alignment subject is the same
+
+
+/*Section*/
+HTML Section Tag
+The HTML <section> tag is used to define sections in a document. When you put your 
+content on a web page, it may contains many chapters, headers, footers, or other 
+sections on a web page that is why HTML <section> tag is used
+
+
+/*Div*/
+The div tag is generally used by web developers to group HTML elements together and 
+apply CSS styles to many elements at once. For example: If you wrap a set of paragraph 
+elements into a div element so you can take the advantage of CSS styles and apply font
+style to all paragraphs at once instead of coding the same style for each paragraph element.
+
+
+/*Required used in Form Filed*/
+The required attribute is a boolean attribute.
+When present, it specifies that an input field must be filled out before submitting the form. 
+Note:- The required attribute works with the following input types: text,
+ search, url, tel, email, password, date pickers, number, checkbox, radio, and file.
+
+
+  /*Autocomplete off*/
+ The autocomplete attribute specifies whether a form should have autocomplete on or off.
+ When autocomplete is on,
+ the browser automatically complete values based on values that the user has entered before.
+ 
+
+/*Containers*/
+Containers are used to pad the content inside of them, and there are two container classes available:
+The .container class provides a responsive fixed width container
+The .container-fluid class provides a full width container, spanning the entire width of the viewport
